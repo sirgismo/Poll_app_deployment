@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+{% extends "poll_app/base.html" %}
+  {% block body_block %}
+     <h1>welcome to login page</h1>
+
+     <h2>Enter here !</h2>
+     <div class="jumbotron">
+       <form  action="{% url 'user_login' %}" method="post">
+         {% csrf_token %}
+         <label for="username">Username :</label>
+         <input type="text" name="username" placeholder="enter username">
+
+         <label for="password">Password : </label>
+         <input type="password" name="password" placeholder="enter password">
+
+         <input type="submit" name="" value="LOGIN !">
+
+       </form>
+     </div>
+
+
+  {% endblock %}

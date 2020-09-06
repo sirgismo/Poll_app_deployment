@@ -1,0 +1,44 @@
+body {
+  background-color: #f0f0f0;
+}
+nav{
+  border-right: 66px solid #f0f0f0;
+  border-left: 66px solid #f0f0f0;
+
+}
+.loginas{
+  font-family: 'Dosis', sans-serif;
+}
+.navbar-brand {
+  padding: 5px 50px;
+  letter-spacing: 7px;
+}
+.page{
+  border-bottom: 2px solid #a6a6a6;
+  padding-bottom: 5px;
+  font-family: 'Dosis', sans-serif;
+  margin-top:20px;
+}
+.subpage{
+  font-family: 'Dosis', sans-serif;
+  padding-bottom: 2px;
+  margin-bottom: 0px;
+}
+.myform{
+  margin: 20px 0px;
+}
+.indent{
+  padding-left: 46px;
+  margin-bottom: 20px;
+
+}
+.mylist{
+  list-style-type: none;
+}
+textarea{
+  margin-bottom: 20px;
+}
+.indexnav{
+  font-family: 'Dosis', sans-serif;
+  padding:100px;
+}

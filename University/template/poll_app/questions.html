@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+{% extends "poll_app/base.html" %}
+{% load crispy_forms_tags %}
+{% block body_block%}
+
+<h3 class="page">Question ID : {{form.id}} </h3>
+<h5 class="subpage">Title :</h6>
+<h2 class="subpage indent">{{form.Title}}</h1>
+<h5 class="subpage">Description :</h6>
+<h4 class="subpage indent ">{{form.Description}}</h2>
+
+<form  class="form-group" action="" method="post">
+  {% csrf_token %}
+  <label for="Answer">Your answer*</label>
+  <input class="" type="hidden" name="userid" value="{{user.id}}">
+  <input type="hidden" name="qid" value="{{form.id}}">
+  <textarea name="Answer" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+  <!-- <input class="form-control" type="text" name="Answer" value=""> -->
+  <input class="btn btn-secondary" type="submit" name="" value="Submit Answer">
+</form>
+
+{% if answered %}
+  <h3 class="subpage indent" >Your answer has been submitted.</h2>
+{% endif %}
+{% if ishead %}
+  <a class="btn btn-danger btn-comment" href="{% url 'question_remove' qid=form.id %}">REMOVE QUESTION</a>
+  <h2 class="page">Submitted answers</h2>
+  <ul class="subpage mylist">
+
+{% for p in postedanswers %}
+
+ <h3 class="subpage"> User having id of <strong>{{ p.userid  }} </strong> has commented : </h3>
+ <li class="subpage indent "><p class="subpage">{{p.Description}}<p></li>
+ <p class="page"></p>
+
+
+{% endfor %}
+</ul>
+{% endif %}
+{% endblock %}
